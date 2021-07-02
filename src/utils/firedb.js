@@ -1,5 +1,9 @@
 import firebase from "firebase"
 
+//This is my personal API Key for firebse
+//This information is not super-sensitive but at the same time not that useful to you since you cannot view the database at all.
+//Create your own Firebase API key to save your own time and prevent headaches down the road.
+
 const firebaseConfig = {
   apiKey: "AIzaSyChW2Y8P4A9-g_8g3wGY5R20pJAfoAtYlo",
   authDomain: "actioneditor-dd44f.firebaseapp.com",
