@@ -81,8 +81,17 @@ function TextEditor() {
 
     const saveLocal = () => {
         const content = editorState.getCurrentContent();
-        const rawContent = convertToRaw(content);
-        window.localStorage.setItem("rawContent", JSON.stringify(rawContent));
+        const text = content.getPlainText();
+
+        if(text.length > 0){
+            const rawContent = convertToRaw(content);
+            window.localStorage.setItem("rawContent", JSON.stringify(rawContent));
+            alert(" ✔️ Data saved locally!")
+        }
+        else{
+            alert("⚠️ TextArea is empty.")
+        }
+
     }
 
     const uploadServer = () => {
