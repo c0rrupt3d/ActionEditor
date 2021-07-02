@@ -191,7 +191,8 @@ function TextEditor() {
     </div>
     <div className="editor-buttons-bottom">
                 <button 
-                data-tip="Translate to Hindi" 
+                disabled={true}
+                data-tip="Translate to Hindi (disabled)" 
                 className="button" style={{marginRight: "auto"}}> 
                 <img alt="Tranlate" src={TranslateImg} width="100%" height="100%"/>
                 </button>

@@ -1,6 +1,8 @@
 # ActionEditor 
 
-This project was created as an assignment [Create React App](https://github.com/facebook/create-react-app).
+This project was created as an assignment
+
+An online [demo](https://c0rrupt3d.github.io/ActionEditor/) of the project is available to view.
 
 
 ## About
