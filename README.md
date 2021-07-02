@@ -13,6 +13,9 @@ Persistance storage is enabled. The data can be stored locally to prevent data l
 
 The TextArea data can also be uploaded/downloaded from a Firebase server.
 
+A Translate button was added to the UI but the functionality in unavailable due the lack of Google Translate API key.
+(I will attempt to add this in the future once the Translate API servers let me create an API key) 
+
 
 ## Steps to view project
 
