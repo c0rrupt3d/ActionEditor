@@ -19,7 +19,13 @@ A Translate button was added to the UI but the functionality in unavailable due 
 
 ## Steps to view project
 
-In the project directory, you can run:
+After downloading  and unzipping the project, in the project directory, run:
+
+### `npm install`
+
+This command will install the necessary dependencies without which the project will not run.
+
+After downloads complete. Run:
 
 ### `npm start`
 
