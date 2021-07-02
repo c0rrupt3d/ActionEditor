@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ActionEditor/static/css/main.ea7aeadb.chunk.css",
+    "main.js": "/ActionEditor/static/js/main.adae7957.chunk.js",
+    "main.js.map": "/ActionEditor/static/js/main.adae7957.chunk.js.map",
+    "runtime-main.js": "/ActionEditor/static/js/runtime-main.c19df03c.js",
+    "runtime-main.js.map": "/ActionEditor/static/js/runtime-main.c19df03c.js.map",
+    "static/css/2.e426f036.chunk.css": "/ActionEditor/static/css/2.e426f036.chunk.css",
+    "static/js/2.6b7b25a2.chunk.js": "/ActionEditor/static/js/2.6b7b25a2.chunk.js",
+    "static/js/2.6b7b25a2.chunk.js.map": "/ActionEditor/static/js/2.6b7b25a2.chunk.js.map",
+    "static/js/3.e5b54dc0.chunk.js": "/ActionEditor/static/js/3.e5b54dc0.chunk.js",
+    "static/js/3.e5b54dc0.chunk.js.map": "/ActionEditor/static/js/3.e5b54dc0.chunk.js.map",
+    "index.html": "/ActionEditor/index.html",
+    "static/css/2.e426f036.chunk.css.map": "/ActionEditor/static/css/2.e426f036.chunk.css.map",
+    "static/css/main.ea7aeadb.chunk.css.map": "/ActionEditor/static/css/main.ea7aeadb.chunk.css.map",
+    "static/js/2.6b7b25a2.chunk.js.LICENSE.txt": "/ActionEditor/static/js/2.6b7b25a2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c19df03c.js",
+    "static/css/2.e426f036.chunk.css",
+    "static/js/2.6b7b25a2.chunk.js",
+    "static/css/main.ea7aeadb.chunk.css",
+    "static/js/main.adae7957.chunk.js"
+  ]
+}
