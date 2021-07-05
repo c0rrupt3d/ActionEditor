@@ -11,6 +11,8 @@ The project was created using ReactJS among many other libraries.
 
 DraftJS was used to create the TextArea and to manage the EditorStates (undo/redo).
 
+_New_: Added text formatting through Rich Utlities (v0.2)
+
 Persistance storage is enabled. The data can be stored locally to prevent data loss on page close.
 
 The TextArea data can also be uploaded/downloaded from a Firebase server.
@@ -42,7 +44,6 @@ You will also see any lint errors in the console.
 Vastav Kalia (business.vkalia@outlook.com)
 
 (Careful, this project is not 100% bug free :D)
-
 
 
 
