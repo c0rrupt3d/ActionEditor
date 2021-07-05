@@ -1,10 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .editor-div{
     margin: 20px;
 }
 
+.title {
+    padding: 20px 40px;
+    background: #A32021;
+    border: none;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+
+
+  .title:after, .title:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 2px solid #fff;
+    transition: transform 0.2s;
+  }
+  .title:after {
+    transform: translate(3px, 3px);
+  }
+  .title:before {
+    transform: translate(-3px, -3px);
+  }
+  .title:hover:after, .title:hover:before {
+    transform: translate(0);
+  }
 
 .logo-container{
     max-height: 100px;
@@ -19,20 +50,35 @@
     font-size: 1rem;
 }
 
+
 .logo-container img{
     /* max-height: 90%; */
     max-width: 100px;
     
 }
 
+@media only screen and (max-width: 600px) {
+    .logo-container p{
+        font-size: 15px;
+    }
+
+    .logo-container img{
+        display: none;
+    }
+}
+
 .editor-container{
-    border: 15px solid #83191a;
+    border: 15px solid #a32122;
+    border-top: none;
     border-bottom: none;
     min-height: 300px;
+    max-height: 300px;
     cursor: text;
     background-color: #ffffff;
     font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto', sans-serif;
     padding: 15px;
+    overflow-y: auto;
 }
 
 .editor-buttons-top{
@@ -48,23 +94,23 @@
     /* justify-content: space-between; */
 }
 
-.button{
+.main-button{
     filter: invert(1);
-    background-color: transparent;
+    background-color :#5BDEDD;
     border: 3px solid #000000;
     max-width: 55px;
     max-height: 55px;
     transition: all .3s;
 }
 
-button:active {
+.main-button:active {
     filter: invert(0);
     border: none;
     background-color: #ffffff;
     transform: scale(.90);
 }
 
-button:hover {
+.main-button:hover {
     cursor: pointer;
     transform: scale(1.08);
 }
@@ -76,7 +122,8 @@ button:hover {
 
 .char-word-counter{
     max-height: 50px;
-    background-color: #83191a;
+    /* background-color: #83191a; */
+    background-color :#a32122 ;
 }
 
 .char-word-counter p{
@@ -100,3 +147,40 @@ button:hover {
       transform: rotate(359deg);
     }
   }
+
+.style-buttons-container{
+    max-height: 50px;
+    /* background-color: #83191a; */
+    background-color :#a32122 ;
+}
+
+.style-button {
+    /* filter: invert(1); */
+    /* background-color :#5BDEDD; */
+    border: 2px solid #000000;
+    max-width: 33px;
+    max-height: 33px;
+    transition: all .3s;
+    margin: 7px;
+}
+
+.style-button:active {
+    filter: invert(1);
+    /* background-color: #ffffff; */
+    transform: scale(.90);
+}
+
+.style-button:hover {
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+.selected {
+    transition: all .3s;
+    filter: invert(1);
+}
+
+.not-selected {
+    transition: all .3s;
+    filter: none;
+}
