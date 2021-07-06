@@ -120,6 +120,17 @@
     font-size: 11px !important;
 }
 
+.translate-select {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #a32122;
+    border: 2px solid #ffffff;
+    margin-left: 10px;
+    height: 100%;
+    color: #ffffff;
+}
+
+
+
 .char-word-counter{
     max-height: 50px;
     /* background-color: #83191a; */
@@ -183,4 +194,32 @@
 .not-selected {
     transition: all .3s;
     filter: none;
+}
+
+.translate{
+    transition: all 0.3s;
+    /* display: none; */
+}
+
+.translate-header{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #a32122;
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+.translate-container{
+    border: 15px solid #a32122;
+    border-top: none;
+    min-height: 100px;
+    max-height: 300px;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
+    overflow-y: auto;
 }

@@ -6,7 +6,6 @@ import ReactTooltip from 'react-tooltip';
 
 import "./texteditor.css";
 
-
 import Logo from "../img/logo.png";
 
 //Editor Main Buttons
@@ -45,17 +44,27 @@ function TextEditor() {
         currentContent()
       );
 
+
+
       const [charCount, setCharCount] = useState(0);
       const [wordCount, setWordCount] = useState(0);
       const [uploadLoad, setUploadLoad] = useState(false);
       const [downloadLoad, setDownloadLoad] = useState(false);
+      const [translateLoad, setTranslateLoad] = useState(false);
 
+
+    //Currently not implemented, only declared
       const [boldSelect, setBoldSelect] = useState(false);
       const [underlineSelect, setUnderlineSelect] = useState(false);
       const [italicSelect, setItalicSelect] = useState(false);
       const [codeSelect, setCodeSelect] = useState(false);
       const [strikethroughSelect, setStrikethroughSelect] = useState(false);
       
+
+    //Translate language
+      const [translateSelectLang, setTranslateSelectLang] = useState("fr")
+      const [translatedText, setTranslatedText] = useState("")
+
     const editor = useRef(null);
     function focusEditor() {
     editor.current.focus();
@@ -96,7 +105,7 @@ function TextEditor() {
             select: strikethroughSelect
         },
         {
-            id: 4,
+            id: 5,
             value: "Code",
             style: "CODE",
             img: CodeStyleImg,
@@ -105,6 +114,28 @@ function TextEditor() {
         }
     ]
 
+    const translateLang = [
+        {
+            id: 1,
+            name: "French",
+            value: "fr"
+        },
+        {
+            id: 2,
+            name: "Hindi",
+            value: "hi"
+        },
+        {
+            id: 3,
+            name: "Japanese",
+            value: "ja"
+        },
+        {
+            id: 4,
+            name: "Spanish",
+            value: "es"
+        },
+    ]
     const toggleInlineStyle = (e) => {
         let style= e.currentTarget.getAttribute('data-style')
         setEditorState(RichUtils.toggleInlineStyle(editorState, style))
@@ -216,6 +247,44 @@ function TextEditor() {
                })           
     }
 
+    const translateAPI = (e) => {
+        setTranslateLoad(true)
+        const content = editorState.getCurrentContent();
+        const text = content.getPlainText(); 
+        const key = process.env.REACT_APP_TRANSLATE_KEY;
+        const lang = translateSelectLang;
+
+        let url = `https://translation.googleapis.com/language/translate/v2?key=${key}`;
+        url += `&q= ${text}`;
+        url += `&source=en`;
+        url += `&target=${lang}`;
+
+        if(text.length > 0){
+            fetch(url, { 
+                method: 'POST',
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json"
+                }
+              })
+              .then(res => res.json())
+              .then((response) => {
+                setTranslatedText(response.data.translations[0].translatedText)
+                setTranslateLoad(false)
+              })
+              .catch(error => {
+                alert("⚠️ There was an error with the translation request: ", error);
+                setTranslateLoad(false)
+              });
+        }
+        else{
+            alert("⚠️ Text area is empty, no text translated.")
+            setTranslateLoad(false)
+        }
+
+
+    }
+
     return (
         
         <div className="editor-div">
@@ -283,17 +352,34 @@ function TextEditor() {
     </div>
     <div className="editor-buttons-bottom">
                 <button 
-                disabled={true}
-                data-tip="Translate to Hindi (disabled)" 
-                className="main-button" style={{marginRight: "auto"}}> 
+                // disabled={true}
+                data-tip="Translate" 
+                className="main-button" 
+                onClick={translateAPI}>
+                { 
+                translateLoad ? <img alt="Loading" className="loading-anim" src={LoadingImg} width="100%" height="100%"/> 
+                :
                 <img alt="Tranlate" src={TranslateImg} width="100%" height="100%"/>
+                }               
                 </button>
                 
+                <div>
+                    <select className="translate-select" name="lang" id="lang" onChange={e => setTranslateSelectLang(e.target.value)}>
+                        {translateLang.map((lang) => (
+                            <option className="translate-options" key={lang.id} value={lang.value}>
+                                {lang.name}
+                            </option>
+                        ))
+                        }
+                    </select>
+
+                </div>
+
                 <button 
                 onClick={saveLocal} 
                 data-tip="Save draft locally" 
                 className="main-button" 
-                style={{marginRight: "10px"}}> 
+                style={{marginRight: "10px", marginLeft: "auto"}}> 
                 <img alt="Save" src={SaveImg} width="100%" height="100%"/>
                 </button>
 
@@ -322,6 +408,12 @@ function TextEditor() {
         effect="solid"
         className="tooltip"
     />
+    <div className="translate">
+    <div className="translate-header">Translated Text</div>
+    <div className="translate-container">
+       {translateLoad ? "⏳ Loading . . .  " :  translatedText}
+    </div>  
+    </div>
     </div>
     )
 }

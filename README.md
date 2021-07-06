@@ -7,11 +7,14 @@ An online [demo](https://c0rrupt3d.github.io/ActionEditor/) of the project is av
 
 ## About
 
+***New***: Added Google Translate API (thanks Mr.Anand) to translate upto 4 languages (only English source supported) (v0.3)
+
+***New***: Added text formatting through Rich Utlities (v0.2)
+
 The project was created using ReactJS among many other libraries.
 
 DraftJS was used to create the TextArea and to manage the EditorStates (undo/redo).
 
-_New_: Added text formatting through Rich Utlities (v0.2)
 
 Persistance storage is enabled. The data can be stored locally to prevent data loss on page close.
 
@@ -36,12 +39,19 @@ After downloads complete. Run:
 Runs the app in the development mode after downloading necessary libraries (viewable in project.json).
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.
 You will also see any lint errors in the console.
+
+**API Keys for Google Translate API and Firebase API need to be created to use those features locally.**
+
+**I have provided a .env.example file to guide you how to create the .env file with the API keys.**  
+
+**To properly use Firebase API, you need to provide the necessary Firebase config as declared in `src/utils/firedb.js`.**
+
 
 ## Made by
 
-Vastav Kalia (business.vkalia@outlook.com)
+**Vastav Kalia** (business.vkalia@outlook.com)
 
 (Careful, this project is not 100% bug free :D)
 

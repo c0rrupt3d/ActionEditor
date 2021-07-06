@@ -1,7 +1,7 @@
 {
   "homepage": "http://c0rrupt3d.github.io/ActionEditor",
   "name": "text_editor",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@react-firebase/database": "^0.3.11",

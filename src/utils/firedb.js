@@ -1,11 +1,11 @@
 import firebase from "firebase"
 
-//This is my personal API Key for Firebase
+//This is my personal config for Firebase
 //This information is not super-sensitive but at the same time not that useful to you since you cannot view the database at all.
-//Create your own Firebase API key to save your own time and prevent headaches down the road.
+//Create your own Firebase config to save your own time and prevent headaches down the road.
 
 const firebaseConfig = {
-  apiKey: "AIzaSyChW2Y8P4A9-g_8g3wGY5R20pJAfoAtYlo",
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "actioneditor-dd44f.firebaseapp.com",
   databaseURL: "https://actioneditor-dd44f-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "actioneditor-dd44f",
